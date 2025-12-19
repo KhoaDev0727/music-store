@@ -35,7 +35,10 @@ const pool = new Pool({
   connectionString: process.env.POSTGRES_URL_NON_POOLING,
   ssl: {
     rejectUnauthorized: false
-  }
+  },
+  max: 1,                  
+  idleTimeoutMillis: 30000, 
+  connectionTimeoutMillis: 2000, 
 });
 
 // Contract addresses (update after deployment)
