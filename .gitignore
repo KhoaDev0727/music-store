@@ -1,0 +1,13 @@
+# Node modules
+node_modules
+.next
+dist
+
+# Env files (sensitive)
+.env
+.env.local
+.env.production
+
+# Logs and temp
+*.log
+temp/

@@ -1,0 +1,489 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated theme colors to ocean blue */
+  --background: oklch(0.02 0.02 220);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.06 0.02 220);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.06 0.02 220);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.7 0.18 220);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.15 0.03 220);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.03 220);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.75 0.15 200);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.2 0.02 220);
+  --input: oklch(0.15 0.03 220);
+  --ring: oklch(0.7 0.18 220);
+  --chart-1: oklch(0.8 0.15 200);
+  --chart-2: oklch(0.7 0.18 220);
+  --chart-3: oklch(0.65 0.2 240);
+  --chart-4: oklch(0.75 0.12 180);
+  --chart-5: oklch(0.7 0.15 210);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.06 0.02 220);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.7 0.18 220);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.15 0.03 220);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.2 0.02 220);
+  --sidebar-ring: oklch(0.7 0.18 220);
+  --sui-cyan: oklch(0.85 0.15 200);
+  --sui-blue: oklch(0.7 0.18 220);
+  --sui-deep: oklch(0.55 0.2 240);
+}
+
+.dark {
+  --background: oklch(0.02 0.02 220);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.06 0.02 220);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.06 0.02 220);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.7 0.18 220);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.15 0.03 220);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.15 0.03 220);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.75 0.15 200);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.2 0.02 220);
+  --input: oklch(0.15 0.03 220);
+  --ring: oklch(0.7 0.18 220);
+  --chart-1: oklch(0.8 0.15 200);
+  --chart-2: oklch(0.7 0.18 220);
+  --chart-3: oklch(0.65 0.2 240);
+  --chart-4: oklch(0.75 0.12 180);
+  --chart-5: oklch(0.7 0.15 210);
+  --sidebar: oklch(0.06 0.02 220);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.7 0.18 220);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.15 0.03 220);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.2 0.02 220);
+  --sidebar-ring: oklch(0.7 0.18 220);
+}
+
+@theme inline {
+  --font-sans: "Inter", "Geist", sans-serif;
+  --font-mono: "JetBrains Mono", "Geist Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sui-cyan: var(--sui-cyan);
+  --color-sui-blue: var(--sui-blue);
+  --color-sui-deep: var(--sui-deep);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated scrollbar to ocean blue theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #020810 0%, #010508 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00e0ff 0%, #00a0ff 50%, #0060ff 100%);
+  border-radius: 5px;
+  border: 2px solid #010508;
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00f0ff 0%, #00b0ff 50%, #0080ff 100%);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+  background: #010508;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00a0ff #010508;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sound wave animation for logo */
+@keyframes sound-wave {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scaleY(1.6);
+    opacity: 1;
+  }
+}
+
+.animate-sound-wave {
+  animation: sound-wave 0.7s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 40s linear infinite;
+}
+
+/* Vinyl spin */
+@keyframes vinyl-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-vinyl-spin {
+  animation: vinyl-spin 3s linear infinite;
+}
+
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* VIP text shimmer effect */
+@keyframes vip-text-shimmer {
+  0% {
+    background-position: -200% center;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 165, 0, 0.4);
+  }
+  100% {
+    background-position: 200% center;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.vip-text-shimmer {
+  background: linear-gradient(90deg, #854d0e 0%, #fbbf24 25%, #fef3c7 50%, #fbbf24 75%, #854d0e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: vip-text-shimmer 3s linear infinite;
+}
+
+/* Premium text glow - updated to ocean theme */
+@keyframes premium-text-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(0, 180, 255, 0.5), 0 0 10px rgba(0, 120, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 200, 255, 0.8), 0 0 25px rgba(0, 150, 255, 0.5);
+  }
+}
+
+.premium-text-glow {
+  animation: premium-text-glow 2s ease-in-out infinite;
+}
+
+/* Badge shine effect */
+.badge-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
+  animation: badge-shine 2s ease-in-out infinite;
+}
+
+@keyframes badge-shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* VIP Glow animations */
+@keyframes vip-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4), 0 0 30px rgba(255, 165, 0, 0.2), 0 0 45px rgba(255, 140, 0, 0.1), inset
+      0 0 20px rgba(255, 215, 0, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 50px rgba(255, 165, 0, 0.4), 0 0 75px rgba(255, 140, 0, 0.2), inset
+      0 0 30px rgba(255, 215, 0, 0.1);
+  }
+}
+
+/* Updated premium glow to ocean blue */
+@keyframes premium-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(0, 180, 255, 0.3), 0 0 20px rgba(0, 120, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 150, 255, 0.3);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+@keyframes border-glow-vip {
+  0%,
+  100% {
+    border-color: rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    border-color: rgba(255, 140, 0, 1);
+  }
+}
+
+/* Updated premium border to ocean blue */
+@keyframes border-glow-premium {
+  0%,
+  100% {
+    border-color: rgba(0, 180, 255, 0.5);
+  }
+  50% {
+    border-color: rgba(0, 220, 255, 0.8);
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.animate-vip-glow {
+  animation: vip-glow 2s ease-in-out infinite;
+}
+
+.animate-premium-glow {
+  animation: premium-glow 2.5s ease-in-out infinite;
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.animate-border-vip {
+  animation: border-glow-vip 2s ease-in-out infinite;
+}
+
+.animate-border-premium {
+  animation: border-glow-premium 2.5s ease-in-out infinite;
+}
+
+/* Glass card effect - updated */
+.glass-card {
+  background: rgba(0, 20, 40, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 150, 255, 0.1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 180, 255, 0.2);
+  box-shadow: 0 0 40px rgba(0, 150, 255, 0.1);
+}
+
+/* VIP Wallet Card */
+.wallet-card-vip {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.05), rgba(255, 215, 0, 0.1));
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  animation: vip-glow 2s ease-in-out infinite, border-glow-vip 2s ease-in-out infinite;
+}
+
+.wallet-card-vip::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+/* Premium Wallet Card - updated to ocean blue */
+.wallet-card-premium {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.1), rgba(0, 120, 255, 0.05), rgba(0, 180, 255, 0.1));
+  border: 2px solid rgba(0, 180, 255, 0.4);
+  animation: premium-glow 2.5s ease-in-out infinite, border-glow-premium 2.5s ease-in-out infinite;
+}
+
+.wallet-card-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 200, 255, 0.15), transparent);
+  animation: shine 4s ease-in-out infinite;
+}
+
+/* Free Wallet Card */
+.wallet-card-free {
+  background: rgba(0, 20, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Music player slider - updated */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00e0ff, #0080ff);
+  cursor: pointer;
+  margin-top: -5px;
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 150, 255, 0.15);
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 15px rgba(0, 220, 255, 0.8);
+  transform: scale(1.1);
+}
+
+/* Earth glow pulse animation */
+@keyframes earth-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(0, 180, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(0, 200, 255, 0.5));
+  }
+}
+
+.animate-earth-pulse {
+  animation: earth-pulse 3s ease-in-out infinite;
+}
