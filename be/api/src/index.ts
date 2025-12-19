@@ -402,21 +402,4 @@ app.get('/api/admin/stats', async (req, res) => {
   }
 });
 
-// =================== Start Server ===================
-
-const PORT = process.env.PORT || 3001;
-
-async function start() {
-  app.listen(PORT, () => {
-    console.log(`Backend API server running on port ${PORT}`);
-    console.log(`Sui Network: ${process.env.SUI_NETWORK || 'testnet'}`);
-    console.log(`Package ID: ${PACKAGE_ID}`);
-    console.log(`Connected to PostgreSQL database: ${process.env.DB_NAME}`);
-  });
-}
-
-start().catch(err => {
-  console.error('Failed to start server:', err);
-});
-
 export default app;
