@@ -1,4 +1,4 @@
-// /music-store/be/api/src/server.ts
+// /music-store/be/api/src/index.ts
 import express from 'express';
 import cors from 'cors';
 import { SuiClient, getFullnodeUrl } from '@mysten/sui/client';
