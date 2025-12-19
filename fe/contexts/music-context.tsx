@@ -52,14 +52,23 @@ export function MusicProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const refreshSongs = async () => {
-    try {
-      const response = await fetch('http://localhost:3001/api/songs')
-      const data = await response.json()
-      setSongs(data.songs)
-    } catch (error) {
-      console.error('Error loading songs:', error)
+  try {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'; 
+    const response = await fetch(`${apiUrl}/api/songs`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    
+    const data = await response.json();
+    setSongs(data.songs || []); 
+  } catch (error) {
+    console.error('Error loading songs:', error);
+    toast.error('Không thể tải danh sách bài hát', {
+      description: 'Vui lòng thử lại sau hoặc kiểm tra kết nối',
+    });
   }
+};
 
   const canAccessSong = (song: Song) => {
     const tierOrder = { free: 0, premium: 1, vip: 2 }
