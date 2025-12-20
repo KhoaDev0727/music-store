@@ -2,15 +2,11 @@
   "name": "music-store-api",
   "version": "1.0.0",
   "description": "Backend API for Web3 Music Store",
-  "main": "dist/server.js",
+  "main": "build/index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "vercel-build": "tsc"
-  },
-  "engines": {
-    "node": ">=18.x <=20.x"
+    "start": "node build/index.js"
   },
   "dependencies": {
     "@mysten/sui": "^1.14.0",
@@ -26,5 +22,8 @@
     "@types/pg": "^8.11.6",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.x <=20.x"
   }
 }
