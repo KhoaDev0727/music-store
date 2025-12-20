@@ -41,9 +41,8 @@ export function AboutSection() {
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-center mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-sui-cyan/20 to-sui-purple/20 border border-sui-cyan/30 mb-6">
             <Heart className="w-4 h-4 text-pink-500" />
@@ -58,23 +57,27 @@ export function AboutSection() {
         </div>
 
         <div
-          className={`glass-card rounded-3xl p-8 sm:p-12 mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`glass-card rounded-3xl p-8 sm:p-12 mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
           style={{ transitionDelay: "0.1s" }}
         >
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="relative flex-shrink-0">
-              <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl bg-gradient-to-br from-sui-cyan to-sui-purple p-1">
-                <div className="w-full h-full rounded-3xl bg-card flex items-center justify-center overflow-hidden">
-                  <div className="text-center">
-                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-sui-cyan/20 to-sui-purple/20 flex items-center justify-center mx-auto mb-3">
-                      <Code className="w-10 h-10 sm:w-12 sm:h-12 text-sui-cyan" />
-                    </div>
-                    <p className="text-xs text-muted-foreground">Developer</p>
-                  </div>
+
+              <div className="w-full h-full rounded-3xl bg-gradient-to-br from-sui-cyan to-sui-purple p-1">
+                <div className="w-full h-full rounded-3xl bg-card p-2
+                  shadow-xl shadow-sui-purple/20
+                  flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/imgsinhvien2.jpg"
+                    alt="Le Minh Khoa"
+                    className="w-full h-full object-contain rounded-2xl
+                 shadow-lg shadow-sui-cyan/30"
+                  />
                 </div>
               </div>
+
+
               <div className="absolute -inset-4 bg-gradient-to-br from-sui-cyan/20 to-sui-purple/20 rounded-3xl blur-2xl -z-10" />
             </div>
 
@@ -111,9 +114,8 @@ export function AboutSection() {
         </div>
 
         <div
-          className={`grid grid-cols-1 sm:grid-cols-3 gap-6 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`grid grid-cols-1 sm:grid-cols-3 gap-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
           style={{ transitionDelay: "0.2s" }}
         >
           {[
